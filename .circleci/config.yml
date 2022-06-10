@@ -15,6 +15,8 @@ jobs:
           name: The Second Step
           command: |
             sudo apt-get update && apt -y upgrade
+            sudo apt install -y wget
+            sudo apt-get install unzip
             sudo apt install -y python3-pip
-            python3 -m pip install robotframework-seleniumlibrary
+            sudo python3 -m pip install robotframework-seleniumlibrary
             robot --version
