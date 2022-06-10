@@ -9,7 +9,6 @@ jobs:
           name: The First Step
           command: |
             python3 --version
-            robot --version
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
       - run:
