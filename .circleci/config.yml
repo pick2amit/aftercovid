@@ -1,21 +1,17 @@
 version: 2.1
 jobs:
-  one-jab:
+  build:
     docker:
-      - image: cimg/node:18.3.0
+      - image: cimg/base:2021.04
     steps:
       - checkout
-      - run: echo "This is FIRST Job by AKT"
-  two-jab:
-    docker:
-      - image: cimg/node:18.3.0
-    steps:
-      - checkout
-      - run: echo "This is MY Second Job by AKT"
-
-  workflows:
-    version: 2.1
-    one_an_two:
-      jobs:
-        - one-jab
-        - two-jab
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: The Second Step
+          command: |
+            ls -al
+            echo '^^^The files in your repo^^^'
