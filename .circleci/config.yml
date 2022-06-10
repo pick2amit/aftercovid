@@ -1,8 +1,8 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
       - image: circleci/node4.8.2
     steps:
-      - checkout:
+      - checkout
       - run: echo "Hello form AMIT"
