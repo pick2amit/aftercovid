@@ -1,8 +1,21 @@
 version: 2.1
 jobs:
-  build:
+  one-jab:
     docker:
       - image: cimg/node:18.3.0
     steps:
       - checkout
-      - run: node --version
+      - run: echo "This is FIRST Job by AKT"
+  two-jab:
+    docker:
+      - image: cimg/node:18.3.0
+    steps:
+      - checkout
+      - run: echo "This is MY Second Job by AKT"
+
+  workflows:
+    version: 2.1
+    one_an_two:
+      jobs:
+        - one-jab
+        - two-jab
