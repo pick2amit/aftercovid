@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run:
+          name: The First Step
+          command: |
+            python3 --version
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: The Second Step
+          command: |
+            sudo apt-get update && sudo apt -y upgrade
+            sudo apt install -y python3-pip
+            sudo python3 -m pip install robotframework-seleniumlibrary
+            echo "robot selenium library installed"
