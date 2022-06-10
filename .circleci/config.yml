@@ -5,4 +5,4 @@ jobs:
       - image: cimg/node:18.3.0
     steps:
       - checkout
-      - run: echo "Hello form AMIT"
+      - run: node --version
