@@ -5,7 +5,7 @@ orbs:
 jobs:
   task01:
     docker:
-      - image: cimg/node:17.9.2-browsers
+      - image: cimg/node:17.9.1-browsers
     steps:
       - browser-tools/install-browser-tools
       - checkout
@@ -15,7 +15,7 @@ jobs:
           google-chrome --version
   task02:
     docker:
-      - image: cimg/node:17.9.2
+      - image: cimg/node:17.9.1
         auth:
           username: amit2022
           password: qtr1_2022  # context / project UI env-var reference
