@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:16.13.1-browsers
+      - image: cimg/base:stable-browsers
 #        auth:
 #          username: amit2022
 #          password: qtr1_2022  # context / project UI env-var reference
