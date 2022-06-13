@@ -23,4 +23,4 @@ jobs:
           java --version
           google-chrome --version
           python3 --version
-          pip3 --version
+          pip --version
