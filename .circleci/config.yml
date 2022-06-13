@@ -10,17 +10,18 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: mkdir test-reports
-#      - run:
-#          name: Install pip & selenium library
-#          command: |
-#            sudo apt-get update && sudo apt -y upgrade
-#            sudo apt install -y python3-pip
-#            sudo python3 -m pip install robotframework-seleniumlibrary
-#            echo "robot selenium library installed"
+      - run:
+          name: Install pip & selenium library
+          command: |
+            sudo apt-get update && sudo apt -y upgrade
+            sudo apt install -y python3-pip
+            sudo python3 -m pip install robotframework-seleniumlibrary
+
 
       - run: |
           node --version
           java --version
           google-chrome --version
           python3 --version
-          pip --version
+          pip3 --version
+          robot --version
