@@ -1,9 +1,21 @@
 # SOURCE: https://circleci.com/docs/2.0/browser-testing/
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.1.0
 jobs:
-  build:
+  task01:
     docker:
-      - image: cimg/base:stable-browsers
+      - image: cimg/node:15.0.1-browsers
+    steps:
+      - browser-tools/install-browser-tools
+      - checkout
+      - run: |
+          node --version
+          java --version
+          google-chrome --version
+  task02:
+    docker:
+      - image: cimg/node:15.0.1
 #        auth:
 #          username: amit2022
 #          password: qtr1_2022  # context / project UI env-var reference
@@ -17,6 +29,11 @@ jobs:
           name: Start Selenium
           command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
           background: true
-      - run:
-          name: check chrome version
-          command: google-chrome --version
+
+workflows:
+  myworkflow:
+    jobs:
+      - task02
+      - task01:
+          requires:
+            - task02
